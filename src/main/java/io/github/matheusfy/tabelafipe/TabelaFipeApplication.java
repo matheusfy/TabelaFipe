@@ -1,21 +1,9 @@
 package io.github.matheusfy.tabelafipe;
 
-import io.github.matheusfy.tabelafipe.model.Fipe;
 import io.github.matheusfy.tabelafipe.service.FipeService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.json.JacksonJsonParser;
-
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
 
 @SpringBootApplication
