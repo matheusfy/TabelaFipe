@@ -44,7 +44,7 @@ public class TabelaFipeApplication implements CommandLineRunner {
 
 
         // *********************************** Busca modelos
-        System.out.println("Digite o codigo desejado: ");
+        System.out.println("Digite o codigo da marca desejada: ");
         Integer codigoModelos = scanner.nextInt();
         scanner.nextLine();
 
@@ -53,7 +53,7 @@ public class TabelaFipeApplication implements CommandLineRunner {
 
         // *********************************** Busca Anos
 
-        System.out.println("Digite o codigo do ano desejado: ");
+        System.out.println("Digite o codigo do modelo desejado: ");
         Integer codigoAno = scanner.nextInt();
         scanner.nextLine();
 
