@@ -26,12 +26,7 @@ public class FipeService {
         this.conversor       = new Conversor();
     }
 
-    public void getTabelaFipe(String uri){
 
-        String tabelaJson = getFipeInfo(uri);
-        TabelaFipe fipeObj = conversor.obterDados(tabelaJson, TabelaFipe.class);
-        System.out.println(fipeObj.toString());
-    }
 
     public void getMarcas(String uri){
 
@@ -50,7 +45,19 @@ public class FipeService {
     public void getAnos(String uri){
         List<Fipe> anosAutomovel = conversor.obterListDados(getFipeInfo(uri), Fipe.class);
         anosAutomovel.stream().sorted(Comparator.comparing(Fipe::nome));
-        anosAutomovel.forEach(System.out::println);
+
+        String linkTabela = uri + "/%s";
+        for(Fipe automovel: anosAutomovel){
+            System.out.println("*------------------------------------------------------------------------------------*");
+            System.out.println(getTabelaFipe(linkTabela.formatted(automovel.codigo())).toString());
+        }
+        System.out.println("*------------------------------------------------------------------------------------*");
+    }
+
+    public TabelaFipe getTabelaFipe(String uri){
+
+        String tabelaJson = getFipeInfo(uri);
+        return conversor.obterDados(tabelaJson, TabelaFipe.class);
     }
 
     private void sortFipeObj(List<Fipe> fipeObj){

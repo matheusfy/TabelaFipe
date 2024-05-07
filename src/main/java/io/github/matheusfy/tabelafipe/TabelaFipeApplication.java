@@ -60,10 +60,5 @@ public class TabelaFipeApplication implements CommandLineRunner {
         fipeAPI = fipeAPI + "/%d/anos".formatted(codigoAno);
         fipeService.getAnos(fipeAPI);
 
-
-        System.out.println("Digite o codigo do ano: ");
-        fipeAPI = fipeAPI + "/%s".formatted(scanner.nextLine());
-        fipeService.getTabelaFipe(fipeAPI);
-
     }
 }
